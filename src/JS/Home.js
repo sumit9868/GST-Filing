@@ -1,10 +1,14 @@
 import React from 'react'
+import '../CSS/Home.css'
+import Offers from './Offers';
+import Info from './Info';
 
 function Home() {
     return (
-        <div className="home">
-            <p>home</p>
-        </div>
+        <>
+            <Offers />
+            <Info />
+        </>
     )
 }
 
