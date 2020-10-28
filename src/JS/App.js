@@ -5,7 +5,6 @@ import Signup from './Signup';
 import Home from './Home';
 import Header from './Header';
 import Footer from './Footer';
-
 function App() {
   return (
     <BrowserRouter>
@@ -20,10 +19,9 @@ function App() {
 
           <Route path="/">
             <Header />
-            <Home />
+            <Home/>
             <Footer/>
           </Route>
-
         </Switch>
       </div>
     </BrowserRouter>

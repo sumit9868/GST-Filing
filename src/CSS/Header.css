@@ -10,6 +10,8 @@
 }
 
 .rightCantainor{
+    display:flex;
+    flex-direction: row;
     margin-bottom: 1%;
     flex: 0.1;
 }
@@ -26,9 +28,13 @@
     color: white ;
     font-weight: bold;
 }
+.homeLink{
+    text-decoration: none;
+}
 .accountLink{
     text-decoration: none;
 }
+
 .account{
     font-size: 2em ;
     color: white ;

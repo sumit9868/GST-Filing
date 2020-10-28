@@ -22,8 +22,13 @@ function Header() {
                 </Navbar.Brand>
 
                 <div className="rightCantainor">
+                    <Link to="/" className="homeLink">
+                    <div className="home__span">
+                        Home
+                        </div>
+                    </Link>
                     <Link to ="/signup" className="accountLink">
-                        <span className="account">Account</span>
+                        <div className="account">Account</div>
                     </Link>
                 </div>
                     
