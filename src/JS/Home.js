@@ -5,10 +5,10 @@ import Info from './Info';
 
 function Home() {
     return (
-        <>
+        <div className="home">
             <Offers />
             <Info />
-        </>
+        </div>
     )
 }
 
