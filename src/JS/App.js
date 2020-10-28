@@ -46,9 +46,15 @@ function App() {
             <Footer />
           </Route>
 
+          <Route path="/personalhome">
+            <Header />
+            <PersonalHome />
+            <Footer />
+          </Route>
+
           <Route path="/">
             <Header />
-            {user ? <PersonalHome /> : <Signup /> }
+            <Home />
             <Footer />
           </Route>
         </Switch>
