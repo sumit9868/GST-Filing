@@ -1,0 +1,67 @@
+.navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between ;
+}
+
+.leftCantainor{
+    flex: 0.9;
+}
+
+.rightCantainor{
+    display:flex;
+    flex-direction: row;
+    margin-bottom: 1%;
+    flex: 0.1;
+}
+
+
+.companyLogo{
+    height:100px;
+    width:100px; 
+}
+
+
+.companyName{
+    font-size: 2em ;
+    color: white ;
+    font-weight: bold;
+}
+.homeLink{
+    text-decoration: none;
+}
+.accountLink{
+    text-decoration: none;
+}
+
+.account{
+    font-size: 2em ;
+    color: white ;
+    font-weight: bold;
+}
+
+/* 1500 , 500  https://legaldocs.co.in/gst-registration  */
+
+@media screen and (max-width:960px){
+
+    .companyLogo{
+        height:50px;
+        width:50px; 
+    }
+
+    .companyName{
+        font-size: 1em ;
+        color: white ;
+        font-weight: bold;
+    }
+
+    .account{
+        font-size: 1em ;
+        color: white ;
+        font-weight: bold;
+    }
+    
+    
+
+}
