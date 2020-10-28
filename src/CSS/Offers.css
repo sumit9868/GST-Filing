@@ -1,21 +1,80 @@
 .offers{
+    /* background-color: #343a40!important; */
+    background-color:#3ce8ff ;
+    height: 60vh;
+    /* width: 100%; */
     display: flex;
-    /* flex-direction: column; */
-    /* align-items: center; */
-    width:20rem;
-    background-color: aqua;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.offers__banner__left{
+    /* height: 100%; */
+    flex: 0.5;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.offers__heading{
+    font-size: 2.5rem;
+}
+
+.offers__banner__right{
+    position: fixed ; 
+    align-self: flex-end;
+    margin-right: 10px;
+    /* flex: 0.5; */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: white;
+    height: 50vh;
 }
 
 .offers__tagline{
-    display:flex;
-    /* flex-direction: row; */
-    font-size:2em;
-    font-weight: 600;
+    background-color: rgb(25, 25, 97);
+    height: 10vh;
+    display: grid;
+    place-content: center;
+    
 }
 
-/* .offers div{
-    display:flex;
-    align-items:center;
-    flex-direction: column;
+.offers__tagline > span{
+    align-items: center;
+    color: white;
+    font-size: 1.7rem;
+}
+
+.offers__form{
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+    align-items: center;
+}
+
+.offers__form > span {
+    font-size: 1.5rem;
+}
+
+/* .price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 } */
 
+
+.oldPrice{
+    margin-right: 10%;
+    font-size: 1.5rem;
+    color: red;
+    text-decoration: line-through;
+}
+
+.newPrice{
+    margin-left: 10%;
+    font-size: 1.5rem;
+    color: green;
+}

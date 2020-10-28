@@ -1,4 +1,4 @@
 .home{
-    background-color: whitesmoke;
-    width: 500px;
+    display: flex;
+    flex-direction: column ;
 }
