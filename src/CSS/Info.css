@@ -1,12 +1,28 @@
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 .item {
-  width: 500px;
+  width: 50%;
   margin: 50px auto;
-  background: #ccc;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background: rgb(46, 133, 248);
   text-align: left;
   color: black;
   font-size: 1em;
+}
+
+.info__header{
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  /* letter-spacing: 0.2em; */
+  font-size: 2em;
+  
+}
+
+.info__para{
+  font-family: 'Open Sans Condensed', sans-serif;
+  line-height: 200%;
 }
