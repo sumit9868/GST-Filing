@@ -28,11 +28,7 @@ function Header() {
     <>
       <Navbar className="navbar" bg="dark">
         <Navbar.Brand className="leftContainer" href="/">
-          <img
-            src={logo}
-            className="companyLogo"
-            alt="logo"
-          />{" "}
+          <img src={logo} className="companyLogo" alt="logo" />{" "}
           <span className="companyName"> Easy GST </span>
         </Navbar.Brand>
 
@@ -40,9 +36,14 @@ function Header() {
           {user ? (
             <div>
               {/* icon */}
-              <Avatar src={auth.currentUser.photoURL} />
+
+              <Link to="/personalhome">
+                <Avatar src={auth.currentUser.photoURL} />
+              </Link>
+
               <div onClick={signout}>Signout</div>
             </div>
+            
           ) : (
             <div>
               <Link to="/signup">

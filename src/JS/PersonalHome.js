@@ -6,6 +6,12 @@ import { firebaseApp } from "./firebase";
 function PersonalHome() {
   const [fileUrl, setFileUrl] = useState("");
   const [{ user }, dispatch] = useStateValue();
+  const [disable1, setDisabled1] = useState(true);
+
+  const deleteFile = () => {
+    document.getElementById("file1").value="";
+  };
+
 
   const onFileChange = async (e) => {
     const file = e.target.files[0];
@@ -13,6 +19,7 @@ function PersonalHome() {
     const fileRef = storageRef.child(file.name);
     await fileRef.put(file);
     setFileUrl(await fileRef.getDownloadURL());
+    setDisabled1(false);
   };
 
   const submitForm = (e) => {
@@ -44,10 +51,18 @@ function PersonalHome() {
       <form onSubmit={submitForm}>
         <input
           type="file"
+          id="file1"
           placeholder="Your file here"
           onChange={onFileChange}
         />
-        <button type="submit"> Submit Form </button>
+
+        <div onClick={deleteFile}>
+          Remove This File
+        </div>
+
+        <button disabled={disable1} type="submit">
+          <span>{disable1 ? <p>Disabled</p> : "Submit Form"}</span>
+        </button>
       </form>
     </div>
   );
