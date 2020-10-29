@@ -37,6 +37,8 @@ function Header() {
             <div>
               {/* icon */}
 
+            
+
               <Link to="/personalhome">
                 <Avatar src={auth.currentUser.photoURL} />
               </Link>

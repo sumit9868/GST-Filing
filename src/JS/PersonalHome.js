@@ -1,68 +1,119 @@
 import React, { useState } from "react";
-import { useStateValue } from "./StateProvider";
 import { auth, db } from "./firebase";
 import { firebaseApp } from "./firebase";
+import { useHistory } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 function PersonalHome() {
-  const [fileUrl, setFileUrl] = useState("");
-  const [{ user }, dispatch] = useStateValue();
+  const [fileUrl1, setFileUrl1] = useState("");
+  const [fileUrl2, setFileUrl2] = useState("");
   const [disable1, setDisabled1] = useState(true);
+  const [disable2, setDisabled2] = useState(true);
 
-  const deleteFile = () => {
-    document.getElementById("file1").value="";
-  };
+  const history = useHistory();
 
-
-  const onFileChange = async (e) => {
+  const onFileChange1 = async (e) => {
     const file = e.target.files[0];
     const storageRef = firebaseApp.storage().ref();
     const fileRef = storageRef.child(file.name);
     await fileRef.put(file);
-    setFileUrl(await fileRef.getDownloadURL());
+    setFileUrl1(await fileRef.getDownloadURL());
     setDisabled1(false);
+  };
+
+  const onFileChange2 = async (e) => {
+    const file = e.target.files[0];
+    const storageRef = firebaseApp.storage().ref();
+    const fileRef = storageRef.child(file.name);
+    await fileRef.put(file);
+    setFileUrl2(await fileRef.getDownloadURL());
+    setDisabled2(false);
+  };
+
+  const deleteFile1 = () => {
+    const desertRef = firebaseApp.storage().refFromURL(fileUrl1);
+    desertRef
+      .delete()
+      .then(function () {
+        alert("Deleted");
+      })
+      .catch(function (error) {
+        alert("Cannot delete");
+      });
+    document.getElementById("file1").value = "";
+    setDisabled1(true);
+    setFileUrl1("");
+  };
+
+  const deleteFile2 = () => {
+    const desertRef = firebaseApp.storage().refFromURL(fileUrl2);
+    desertRef
+      .delete()
+      .then(function () {
+        alert("Deleted");
+      })
+      .catch(function (error) {
+        alert("Cannot delete");
+      });
+    document.getElementById("file2").value = "";
+    setDisabled1(true);
+    setFileUrl1("");
   };
 
   const submitForm = (e) => {
     e.preventDefault();
-    const username = auth.currentUser.displayName;
-    const pic = auth.currentUser.photoURL;
-    const id = auth.currentUser.uid;
-
-    console.log(username);
-    console.log(auth.currentUser.uid);
-    console.log(fileUrl);
 
     db.collection("users")
-      .doc(id)
+      .doc(auth.currentUser.uid)
       .set({
-        username: username,
-        pic: pic,
-        file: fileUrl,
+        username: auth.currentUser.displayName,
+        pic: auth.currentUser.photoURL,
+        file1: fileUrl1,
+        file2: fileUrl2,
       })
       .then(alert("Info Saved"))
       .catch((error) => {
         alert(error.message);
       });
+
+    history.replace("/");
   };
 
   return (
     <div className="personalhome">
       This is the personal Home screen
       <form onSubmit={submitForm}>
-        <input
-          type="file"
-          id="file1"
-          placeholder="Your file here"
-          onChange={onFileChange}
-        />
+        <div>
+          <input
+            type="file"
+            id="file1"
+            placeholder="Your file here"
+            onChange={onFileChange1}
+          />
 
-        <div onClick={deleteFile}>
-          Remove This File
+          <Button disabled={!fileUrl1} onClick={deleteFile1}>
+            Remove This File
+          </Button>
         </div>
 
-        <button disabled={disable1} type="submit">
-          <span>{disable1 ? <p>Disabled</p> : "Submit Form"}</span>
-        </button>
+        <div>
+          <input
+            type="file"
+            id="file2"
+            placeholder="Your file here"
+            onChange={onFileChange2}
+          />
+
+          <Button disabled={!fileUrl2} onClick={deleteFile2}>
+            Remove This File
+          </Button>
+        </div>
+
+        <div>
+          <button disabled={disable1 || disable2} type="submit">
+            Submit Form
+          </button>
+        </div>
       </form>
     </div>
   );
