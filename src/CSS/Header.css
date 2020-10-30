@@ -1,15 +1,22 @@
-.navbar{
+.headerNav{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:space-between ;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: #363B41 !important;
 }
 
-.leftContainer{
+.headerLeftContainer{
     flex: 0.9;
 }
 
-.rightContainer{
+.headerLeftContainer__link{
+    text-decoration: none !important;
+}
+
+.headerRightContainer{
     display:flex;
     flex-direction: row;
     margin-bottom: 1%;
@@ -28,25 +35,48 @@
     color: white ;
     font-weight: bold;
 }
-.homeLink{
-    text-decoration: none;
-
-}
-.accountLink{
-    text-decoration: none;
+.signup__div{
+    cursor: pointer;
 }
 
-.account{
-    font-size: 2em ;
+.headerRightContainer__span{
+    font-size: 1.5em ;
     color: white ;
     font-weight: bold;
 }
 
-.rightContainerLink{
-    color:white;
+.signup__link{
+    text-decoration: none !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-.rightContainerLink:hover{
-    text-decoration: none;
+
+.personal__img{
+    color: white;
+    margin-right: 5% !important;
+    font-size: 2em !important;
+}
+
+.avtar__link{ 
+    text-decoration: none !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.avtarBox__img{
+    font-size: 2em !important;
+    margin-right: 5% !important;
+   
+}
+
+.avtarBox__span{
+    cursor: pointer;
+    font-size: 1.5em ;
+    color: white ;
+    font-weight: bold;
+   
 }
 
 /* 1500 , 500  https://legaldocs.co.in/gst-registration  */
@@ -64,12 +94,19 @@
         font-weight: bold;
     }
 
-    .account{
+    .headerRightContainer__span{
+        font-size: 1em ;
+        color: white ;
+        font-weight: bold;
+    }
+
+    .avtarBox__span{
         font-size: 1em ;
         color: white ;
         font-weight: bold;
     }
     
-    
+
+
 
 }

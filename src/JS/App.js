@@ -46,9 +46,9 @@ function App() {
             <Footer />
           </Route>
 
-          <Route path="/personalhome">
+          <Route path="/dashboard">
             <Header />
-            <PersonalHome />
+            {user ? <PersonalHome /> : <Home/>}
             <Footer />
           </Route>
 
