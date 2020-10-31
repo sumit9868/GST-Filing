@@ -20,7 +20,7 @@
 }
 
 .offers__banner__right{
-    position: fixed ; 
+    position: fixed  ; 
     align-self: flex-end;
     margin-right: 10px;
     display: flex;
@@ -39,7 +39,7 @@
     place-content: center;
 }
 
-.offers__tagline > span{
+.offers__tagline > span {
     align-items: center;
     color: black;
     font-family: 'Nunito Sans', sans-serif;
@@ -49,6 +49,7 @@
 .offers__form{
     display: flex;
     flex-direction:column;
+    justify-content: space-around;
     text-align: center;
     align-items: center;
 }
@@ -75,23 +76,144 @@
 }
 
 
+
+
+.modal {
+    display: none; /* Hidden by default */
+    /* Stay in place */
+    /* Sit on top */
+    z-index: 1 !important; 
+    /* position: absolute !important; */
+    padding-top: 10%;/* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100% !important; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    border-radius: 20px !important;
+    background: #F1D1B5 !important;
+    /* background-color: #ebf5fc !important; */
+    margin: auto;
+    padding: 2%;
+    border: 1px solid #888;
+    width: 50% !important;
+    display: flex !important;
+    flex-direction: row-reverse !important;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    height: fit-content;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup { 
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    /* overflow-y: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background: #e3fff6;*/
+}
+
+.modalForm {
+    border-radius: 2%;
+    padding: 30px;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  .form h1 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* 
+  
+  .input-wrapper label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  .input-wrapper input {
+    background-color: transparent;
+    border: unset;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1),
+    inset -3px -3px 5px rgba(241, 255, 255, 0.5);
+  } */
+  
+  .offerButton {
+    margin-top: 2%;
+    width: 60%;
+    background-color: white;
+    outline: none;
+    color: #292929;
+    font-weight: bold;
+    border: 1px solid #3b3b3b;
+    border-radius: 10px;
+    padding: 10px;
+    transition: ease all 250ms;
+    border: unset;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  .error {
+    margin-top: 10px;
+    font-weight: bold;
+    font-style: italic;
+    color: #b60000;
+  }
+  
+  .offerLogin{
+      background-color: #fa9745;
+  }
+
+
 @media screen and (max-width: 960px){
 
     .offers{
-        background-color: #F1D1B5;
-        height: 90vh;
+        background-color: white;
+        height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
     }
     
     
     .offers__banner__left{
+        background-color: #F1D1B5;
         flex: 0.1;
         display: flex;
         flex-direction: column;
-        text-align: center;
-        font-family: 'Josefin Sans', sans-serif;
+        padding-top: 2%;
+        padding-bottom: 2%;
     }
     
     .offers__heading{
@@ -106,6 +228,7 @@
         height: 40vh;
         padding: 5%;
         border-radius: 10px;
+        margin-top: 2%;
     }
     
     .offers__tagline{
@@ -149,6 +272,10 @@
         margin-left: 10%;
         font-size: 1.5rem;
         color: green;
+    }
+
+    .modalForm h1{
+        font-size: 0.5rem;
     }
     
 }

@@ -22,7 +22,7 @@ function Footer() {
         <div className="developers">
 
           <a
-            className={"footer__link"}
+            className={"footer__link3"}
             href={`mailto: sumitsaurabh9868@gmail.com`}
             target={"_blank"}
             rel="noopener noreferrer"
@@ -31,7 +31,7 @@ function Footer() {
           </a>
 
           <a
-            className={"footer__link"}
+            className={"footer__link1"}
             href={`mailto: prabhjotlamba2001@gmail.com `}
             target={"_blank"}
             rel="noopener noreferrer"
@@ -40,7 +40,7 @@ function Footer() {
             </a>
 
           <a
-            className={"footer__link"}
+            className={"footer__link2"}
             href={`mailto: abhijeetvarun@gmail.com`}
             target={"_blank"}
             rel="noopener noreferrer"
