@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import logo from "../Media/logo.png";
 import Navbar from "react-bootstrap/Navbar";
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import "../CSS/Header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useStateValue } from "./StateProvider";
@@ -9,6 +10,8 @@ import { Avatar } from "@material-ui/core";
 import { auth } from "./firebase";
 
 function Header() {
+
+  const history = useHistory();
   const [{ user }, dispatch] = useStateValue();
   console.log("Hey user");
   console.log(user);
@@ -22,46 +25,41 @@ function Header() {
       .catch(function () {
         console.log("Error in Signout");
       });
+
+
+    history.replace("/");
   };
 
   return (
     <>
-      <Navbar className="navbar" bg="dark">
-        <Navbar.Brand className="leftContainer" href="/">
-          <img src={logo} className="companyLogo" alt="logo" />{" "}
-          <span className="companyName"> Easy GST </span>
+      <Navbar className="headerNav" >
+
+        <Navbar.Brand className="headerLeftContainer">
+          <Link to="/" className="headerLeftContainer__link"  >
+            <img src={logo} className="companyLogo" alt="logo" />{" "}
+            <span className="companyName"> Easy GST </span>
+          </Link>
         </Navbar.Brand>
 
-        <div className="rightContainer">
+
+        <div className="headerRightContainer">
           {user ? (
-            <div>
-              {/* icon */}
-
-            
-
-              <Link to="/personalhome">
-                <Avatar src={auth.currentUser.photoURL} />
+            <div className="avtarBox">
+              {/* icons */}
+              < Link className="avtar__link" to="/dashboard">
+                <Avatar className="avtarBox__img" src={auth.currentUser.photoURL} />
+                <span className="avtarBox__span" onClick={signout}>Signout</span>
               </Link>
-
-              <div onClick={signout}>Signout</div>
             </div>
-            
+
           ) : (
-            <div>
-              <Link to="/signup">
-                <div className="rightContainerLink">Signup</div>
-              </Link>
-            </div>
-          )}
-
-          {/* <Link to="/" className="homeLink">
-                    <div className="home__span">
-                        Home
-                        </div>
-                    </Link>
-                    <Link to ="/signup" className="accountLink">
-                        <div className="account">Account</div>
-                    </Link> */}
+              <div className="signup__div">
+                <Link to="/signup" className="signup__link">
+                  < PersonAddIcon className="personal__img" />
+                  <span className="headerRightContainer__span">Signup</span>
+                </Link>
+              </div>
+            )}
         </div>
       </Navbar>
     </>

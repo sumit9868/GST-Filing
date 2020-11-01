@@ -1,8 +1,6 @@
 .offers{
-    /* background-color: #343a40!important; */
-    background-color:#3ce8ff ;
+    background-color: #F1D1B5;
     height: 60vh;
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -10,12 +8,11 @@
 
 
 .offers__banner__left{
-    /* height: 100%; */
     flex: 0.5;
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .offers__heading{
@@ -26,25 +23,26 @@
     position: fixed ; 
     align-self: flex-end;
     margin-right: 10px;
-    /* flex: 0.5; */
     display: flex;
     flex-direction: column;
     text-align: left;
-    background-color: white;
+    background-color: #3b3b3b;
     height: 50vh;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .offers__tagline{
-    background-color: rgb(25, 25, 97);
+    background-color: white;
     height: 10vh;
     display: grid;
     place-content: center;
-    
 }
 
 .offers__tagline > span{
     align-items: center;
-    color: white;
+    color: black;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.7rem;
 }
 
@@ -56,14 +54,11 @@
 }
 
 .offers__form > span {
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
     font-size: 1.5rem;
 }
 
-/* .price{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-} */
 
 
 .oldPrice{
@@ -77,4 +72,83 @@
     margin-left: 10%;
     font-size: 1.5rem;
     color: green;
+}
+
+
+@media screen and (max-width: 960px){
+
+    .offers{
+        background-color: #F1D1B5;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    
+    .offers__banner__left{
+        flex: 0.1;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    
+    .offers__heading{
+        font-size: 1.5rem;
+    }
+    
+    .offers__banner__right{
+        flex: 0.6;
+        align-self: center;
+        position: relative ; 
+        margin-right: 0px;
+        height: 40vh;
+        padding: 5%;
+        border-radius: 10px;
+    }
+    
+    .offers__tagline{
+        background-color: white;
+        height: 10vh;
+        display: grid;
+        place-content: center;
+    }
+    
+    .offers__tagline > span{
+        align-items: center;
+        color: black;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+    
+    .offers__form{
+        display: flex;
+        flex-direction:column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .offers__form > span {
+        font-family: 'Nunito Sans', sans-serif;
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    
+    
+    .oldPrice{
+        margin-right: 10%;
+        font-size: 1.5rem;
+        color: red;
+        text-decoration: line-through;
+    }
+    
+    .newPrice{
+        margin-left: 10%;
+        font-size: 1.5rem;
+        color: green;
+    }
+    
 }

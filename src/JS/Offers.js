@@ -1,5 +1,4 @@
 import React from 'react'
-import { scroller } from "react-scroll";
 import '../CSS/Offers.css'
 function Offers() {
 
@@ -9,9 +8,9 @@ function Offers() {
         <div className="offers">
 
             <div className="offers__banner__left">
-                <span className="offers__heading">GST Filing</span>
-                <span className="offers__heading">GST Return Filing Online in 3 Simple Steps</span>
-                <span className="offers__heading">File your GST Returns Now</span>
+                <span className="offers__heading">GST filing</span>
+                <span className="offers__heading">GST return filing online in 3 simple steps</span>
+                <span className="offers__heading">File your GST returns now</span>
             </div>
 
 
@@ -22,7 +21,7 @@ function Offers() {
                 </div>
 
                 <div className="offers__form">
-                    <span>Best GST Registration Package</span>
+                    <span>Best GST filing Package</span>
                     {/* <br/> */}
                     <div className="price">
                         <span className="oldPrice">₹1500</span>
