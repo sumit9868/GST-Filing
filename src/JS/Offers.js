@@ -73,9 +73,9 @@ function Offers() {
 
         <div className="offers__banner__right">
             <div className="offers__tagline">
-                <span> Todays Offers </span>
+                <span> Today's Offers </span>
             </div>
-
+             <br/>   
             <div className="offers__form">
                 <span>Best GST filing Package</span>
 
@@ -85,7 +85,7 @@ function Offers() {
                 </div>
 
                 <span>Offer valid for today only</span>
-
+                <br/>
                 <button className="offerButton" id="myBtn" onClick={btn}>Buy Now</button>
             </div>
         </div>
@@ -98,8 +98,8 @@ function Offers() {
                         <h1>Hurry up!!! Register Now  </h1>
                         <InputField
                             ref={inputRefs.current[0]}
-                            name="name"
                             label="Name*:"
+                            name="name"
                             onChange={handleChange}
                             validation={"required|min:6|max:12"}
                         />
@@ -110,7 +110,7 @@ function Offers() {
                             validation="required|min:6"
                             onChange={handleChange}
                         />
-                        <Button type="submit" className="offerLogin">THANK YOU </Button>
+                        <Button type="submit" className="offerLogin">REGISTER </Button>
                     </form>
                 </div>
             </div>
