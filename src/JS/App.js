@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Signup from "./Signup";
 import Home from "./Home";
 import Header from "./Header";
+import Carousel from "./Carousel";
 import Footer from "./Footer";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
@@ -55,6 +56,7 @@ function App() {
 
           <Route path="/">
             <Header />
+            <Carousel />
             <Home />
             <Footer />
           </Route>

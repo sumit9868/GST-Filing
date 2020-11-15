@@ -1,17 +1,22 @@
 .offers{
-    background-color: #F1D1B5;
+    background-color: #d2d3c9/*#F1D1B5*/;
     height: 60vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    //justify-content: space-around;
+    //border : 5px solid yellow;
 }
 
-
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 .offers__banner__left{
-    flex: 0.5;
+    width : 70%;
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding : 60px;
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -21,7 +26,8 @@
 
 .offers__banner__right{
     position: fixed  ; 
-    align-self: flex-end;
+    right : 10px;
+    //align-self: flex-end;
     margin-right: 10px;
     display: flex;
     flex-direction: column;
@@ -40,9 +46,11 @@
 }
 
 .offers__tagline > span {
+
     align-items: center;
     color: black;
-    font-family: 'Nunito Sans', sans-serif;
+    /*font-family: 'Trebuchet MS','Nunito Sans', sans-serif;*/
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 1.7rem;
 }
 
@@ -52,6 +60,9 @@
     justify-content: space-around;
     text-align: center;
     align-items: center;
+    /*font-family: 'Trebuchet MS','Nunito Sans', sans-serif;*/
+    font-family: 'Josefin Sans', sans-serif;
+
 }
 
 .offers__form > span {
@@ -65,14 +76,14 @@
 .oldPrice{
     margin-right: 10%;
     font-size: 1.5rem;
-    color: red;
+    color:white;
     text-decoration: line-through;
 }
 
 .newPrice{
     margin-left: 10%;
     font-size: 1.5rem;
-    color: green;
+    color: red;
 }
 
 
@@ -96,8 +107,10 @@
 /* Modal Content */
 .modal-content {
     border-radius: 20px !important;
-    background: #F1D1B5 !important;
+    /*background: #f1f6f9!important;*/
     /* background-color: #ebf5fc !important; */
+    background: linear-gradient(to right, #8e9eab, #eef2f3);
+    font-family: 'Josefin Sans', sans-serif;
     margin: auto;
     padding: 2%;
     border: 1px solid #888;
@@ -105,7 +118,6 @@
     display: flex !important;
     flex-direction: row-reverse !important;
 }
-
 /* The Close Button */
 .close {
     color: #aaaaaa;
@@ -136,17 +148,22 @@
 .modalForm {
     border-radius: 2%;
     padding: 30px;
-    min-width: 500px;
+    //min-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
-  
+  /*h1{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 30px;
+  }*/
   .form h1 {
     text-align: center;
     width: 100%;
     margin-bottom: 20px;
+    color : #14274e;
   }
   
   /* 
@@ -174,6 +191,7 @@
     outline: none;
     color: #292929;
     font-weight: bold;
+    font-size: 20px;
     border: 1px solid #3b3b3b;
     border-radius: 10px;
     padding: 10px;
@@ -193,7 +211,7 @@
   }
   
   .offerLogin{
-      background-color: #fa9745;
+      background-color: #333456;
   }
 
 
@@ -208,7 +226,8 @@
     
     
     .offers__banner__left{
-        background-color: #F1D1B5;
+        width : 100%;
+        background-color: #d2d3c9;
         flex: 0.1;
         display: flex;
         flex-direction: column;
@@ -264,18 +283,17 @@
     .oldPrice{
         margin-right: 10%;
         font-size: 1.5rem;
-        color: red;
+        color: white;
         text-decoration: line-through;
     }
     
     .newPrice{
         margin-left: 10%;
         font-size: 1.5rem;
-        color: green;
+        color: red;
     }
-
-    .modalForm h1{
-        font-size: 0.5rem;
+    .modal-content{
+        width : 80%;
     }
     
 }
