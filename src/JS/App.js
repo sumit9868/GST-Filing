@@ -4,11 +4,13 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Signup from "./Signup";
 import Home from "./Home";
 import Header from "./Header";
+import Carousel from "./Carousel";
 import Footer from "./Footer";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 import { actionTypes } from "./reducer";
 import PersonalHome from "./PersonalHome";
+import Info from "./Info";
 
 function App() {
   // eslint-disable-next-line
@@ -48,12 +50,13 @@ function App() {
 
           <Route path="/dashboard">
             <Header />
-            {user ? <PersonalHome /> : <Home/>}
+            {user ? <PersonalHome /> : <Info/>}
             <Footer />
           </Route>
 
           <Route path="/">
             <Header />
+            <Carousel />
             <Home />
             <Footer />
           </Route>

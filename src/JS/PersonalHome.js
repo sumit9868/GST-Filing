@@ -13,6 +13,8 @@ function PersonalHome() {
   const useStyles = makeStyles((theme) => ({
     button: {
       margin: theme.spacing(1),
+      alignSelf:'center'
+      
     },
   }));
 
@@ -206,9 +208,10 @@ function PersonalHome() {
     <div className="personalhome">
       <div className="perosonalhome__box">
   
-        <div className="personalhome__heading"> Submit the Documents Here </div>
+        <div className="personalhome__heading"> Submit your documents here </div>
         <form onSubmit={submitForm} className="personalhome__form">
           <div className="form__field">
+            <span className="form__field__heading">Upload Pan</span>
             <input
               type="file"
               id="file1"
@@ -229,6 +232,7 @@ function PersonalHome() {
           </div>
 
           <div className="form__field">
+            <span className="form__field__heading">Upload Pan</span>
             <input
               type="file"
               id="file2"
@@ -251,6 +255,7 @@ function PersonalHome() {
           </div>
 
           <div className="form__field">
+            <span className="form__field__heading">Upload Pan</span>
             <input
               type="file"
               id="file3"
@@ -275,6 +280,7 @@ function PersonalHome() {
           </div>
 
           <div className="form__field">
+            <span className="form__field__heading">Upload Pan</span>
             <input
               type="file"
               id="file4"
@@ -296,6 +302,7 @@ function PersonalHome() {
           </div>
 
           <div className="form__field">
+            <span className="form__field__heading">Upload Pan</span>
             <input
               type="file"
               id="file5"
@@ -320,6 +327,7 @@ function PersonalHome() {
           </div>
 
           <div className="form__field">
+            <span className="form__field__heading">Upload Pan</span>
             <input
               type="file"
               id="file6"
